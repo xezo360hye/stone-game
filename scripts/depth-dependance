@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+function run() {
+        echo
+        echo "Using depth $1, $2, running 10 times"
+	time for i in `seq 1 10`; do
+		python cli.py < data/depth-$1-$2 > /dev/null
+	done
+}
+
+run 1 minimax
+run 5 minimax
+run 10 minimax
+run 15 minimax
+
+run 1 alpha-beta
+run 5 alpha-beta
+run 10 alpha-beta
+run 15 alpha-beta

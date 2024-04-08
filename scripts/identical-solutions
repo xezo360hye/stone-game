@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+for file in data/identical-solutions-*
+do
+	echo "Using data file: ${file//data\//}"
+	python cli.py < "${file}" | tail -n3
+done

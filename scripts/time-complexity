@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+echo "Using data/minimax 10 times"
+time \
+for i in `seq 1 10`
+do
+	python cli.py < data/minimax > /dev/null
+done
+
+echo
+echo "Using data/alpha-beta 10 times"
+time \
+for i in `seq 1 10`
+do
+	python cli.py < data/alpha-beta > /dev/null
+done
